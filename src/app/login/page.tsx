@@ -33,7 +33,7 @@ export default function LoginPage() {
             AT<span className="text-[#D4756A]">LAS</span>
           </h1>
           <p className="text-[#6B7280] mt-2 text-sm">
-            The first reader that remembers what you know.
+            your mind, picked up where you left off.
           </p>
         </div>
 
