@@ -45,48 +45,48 @@ export default async function AtlasPage() {
       <Nav />
       <main className="max-w-2xl mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-2xl font-black text-slate-100">Your Atlas</h1>
-          <p className="text-slate-400 text-sm mt-1">
+          <h1 className="text-2xl font-black text-[#2D3142]">Your Atlas</h1>
+          <p className="text-[#6B7280] text-sm mt-1">
             A map of what you know. Dark zones are where you can grow.
           </p>
         </div>
 
         {radarData.length >= 3 ? (
           <>
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-6">
+            <div className="bg-white border border-[#E8E4DD] rounded-2xl p-6 mb-6">
               <KnowledgeRadar data={radarData} />
             </div>
 
             <div className="grid grid-cols-3 gap-4 mb-6">
-              <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
-                <p className="text-2xl font-black text-sky-400">{totalConcepts}</p>
-                <p className="text-xs text-slate-500 mt-1">Concepts Mapped</p>
+              <div className="bg-white border border-[#E8E4DD] rounded-xl p-4 text-center">
+                <p className="text-2xl font-black text-[#D4756A]">{totalConcepts}</p>
+                <p className="text-xs text-[#6B7280] mt-1">Concepts Mapped</p>
               </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
-                <p className="text-2xl font-black text-emerald-400">{radarData.length}</p>
-                <p className="text-xs text-slate-500 mt-1">Domains</p>
+              <div className="bg-white border border-[#E8E4DD] rounded-xl p-4 text-center">
+                <p className="text-2xl font-black text-[#7CB5A0]">{radarData.length}</p>
+                <p className="text-xs text-[#6B7280] mt-1">Domains</p>
               </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
-                <p className="text-2xl font-black text-purple-400">{avgScore}</p>
-                <p className="text-xs text-slate-500 mt-1">Avg Depth</p>
+              <div className="bg-white border border-[#E8E4DD] rounded-xl p-4 text-center">
+                <p className="text-2xl font-black text-[#DFB44E]">{avgScore}</p>
+                <p className="text-xs text-[#6B7280] mt-1">Avg Depth</p>
               </div>
             </div>
 
             <div className="space-y-2">
               {radarData.map((d) => (
-                <div key={d.domain} className="flex items-center justify-between p-3 bg-slate-900 border border-slate-800 rounded-xl">
+                <div key={d.domain} className="flex items-center justify-between p-3 bg-white border border-[#E8E4DD] rounded-xl">
                   <div>
-                    <p className="text-sm font-semibold text-slate-200">{d.domain}</p>
-                    <p className="text-xs text-slate-500">{d.conceptCount} concepts</p>
+                    <p className="text-sm font-semibold text-[#2D3142]">{d.domain}</p>
+                    <p className="text-xs text-[#6B7280]">{d.conceptCount} concepts</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-24 h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="w-24 h-2 bg-[#E8E4DD] rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-sky-400 rounded-full"
+                        className="h-full bg-[#7CB5A0] rounded-full"
                         style={{ width: `${(d.score / 4) * 100}%` }}
                       />
                     </div>
-                    <span className="text-xs text-slate-400 w-8 text-right">{d.score}</span>
+                    <span className="text-xs text-[#6B7280] w-8 text-right">{d.score}</span>
                   </div>
                 </div>
               ))}
@@ -94,24 +94,24 @@ export default async function AtlasPage() {
           </>
         ) : (
           <div className="text-center py-12">
-            <p className="text-3xl mb-4">◎</p>
-            <p className="text-slate-300 font-semibold">Your atlas is forming</p>
-            <p className="text-slate-500 text-sm mt-2">
+            <p className="text-3xl mb-4 text-[#7CB5A0]">◎</p>
+            <p className="text-[#2D3142] font-semibold">Your atlas is forming</p>
+            <p className="text-[#6B7280] text-sm mt-2">
               React to concepts across 3+ domains to reveal your knowledge map.
             </p>
             <div className="mt-8 max-w-xs mx-auto">
-              <div className="flex justify-between text-xs text-slate-500 mb-2">
+              <div className="flex justify-between text-xs text-[#6B7280] mb-2">
                 <span>Domains discovered</span>
                 <span>{radarData.length} / 3</span>
               </div>
-              <div className="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+              <div className="w-full h-3 bg-[#E8E4DD] rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-sky-500 rounded-full transition-all duration-500"
+                  className="h-full bg-[#7CB5A0] rounded-full transition-all duration-500"
                   style={{ width: `${Math.min((radarData.length / 3) * 100, 100)}%` }}
                 />
               </div>
               {totalConcepts > 0 && (
-                <p className="text-xs text-slate-600 mt-2">
+                <p className="text-xs text-[#6B7280] mt-2">
                   {totalConcepts} concepts mapped across {radarData.length} domain{radarData.length !== 1 ? "s" : ""}
                 </p>
               )}

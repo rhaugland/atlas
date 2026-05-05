@@ -32,8 +32,8 @@ export default async function FeedPage() {
       <Nav />
       <main className="max-w-2xl mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-2xl font-black text-slate-100">Your Feed</h1>
-          <p className="text-slate-400 text-sm mt-1">
+          <h1 className="text-2xl font-black text-[#2D3142]">Your Feed</h1>
+          <p className="text-[#6B7280] text-sm mt-1">
             Curated for you. Tap any article to read and grow.
           </p>
         </div>
@@ -43,7 +43,7 @@ export default async function FeedPage() {
           ))}
           {(!articles || articles.length === 0) && (
             <div className="text-center py-20">
-              <p className="text-slate-400">No articles yet. Content is being curated for you.</p>
+              <p className="text-[#6B7280]">No articles yet. Content is being curated for you.</p>
             </div>
           )}
         </div>

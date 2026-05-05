@@ -41,14 +41,14 @@ export function ArticleReader({
   return (
     <article className="max-w-2xl mx-auto">
       <header className="mb-8">
-        <p className="text-xs font-semibold text-sky-400 uppercase tracking-wider mb-2">
+        <p className="text-xs font-semibold text-[#6B8DB5] uppercase tracking-wider mb-2">
           {source} {readingTime && `· ${readingTime} min read`}
         </p>
-        <h1 className="text-3xl font-black text-slate-100 leading-tight">{title}</h1>
+        <h1 className="text-3xl font-black text-[#2D3142] leading-tight">{title}</h1>
       </header>
 
-      <div className="mb-6 flex flex-wrap gap-2">
-        <p className="text-xs text-slate-500 w-full mb-1">Concepts in this article:</p>
+      <div className="mb-6 bg-[#F2EFE9] border border-[#E8E4DD] rounded-xl p-4 flex flex-wrap gap-2">
+        <p className="text-xs text-[#6B7280] w-full mb-1">Concepts in this article:</p>
         {concepts.map((c) => (
           <ConceptChip
             key={c.id}
@@ -60,7 +60,7 @@ export function ArticleReader({
         ))}
       </div>
 
-      <div className="prose prose-invert prose-slate max-w-none text-slate-300 leading-relaxed text-[15px]">
+      <div className="prose max-w-none text-[#2D3142] leading-relaxed text-[15px]">
         {content.split("\n\n").map((paragraph, i) => (
           <p key={i} className="mb-4">{paragraph}</p>
         ))}

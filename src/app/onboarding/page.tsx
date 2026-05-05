@@ -17,12 +17,12 @@ function MockFeedPreview() {
   return (
     <div className="space-y-3 pointer-events-none">
       {mockArticles.map((a, i) => (
-        <div key={i} className="p-4 bg-slate-900/80 border border-slate-800 rounded-2xl">
-          <p className="text-[10px] font-semibold text-sky-400 uppercase tracking-wider mb-1">
-            {a.source} <span className="text-slate-600 ml-1">{a.domain}</span>
+        <div key={i} className="p-4 bg-white border border-[#E8E4DD] rounded-2xl">
+          <p className="text-[10px] font-semibold text-[#D4756A] uppercase tracking-wider mb-1">
+            {a.source} <span className="text-[#6B7280] ml-1">{a.domain}</span>
           </p>
-          <p className="text-sm font-bold text-slate-200 leading-snug">{a.title}</p>
-          <div className="flex items-center gap-3 mt-2 text-[10px] text-slate-500">
+          <p className="text-sm font-bold text-[#2D3142] leading-snug">{a.title}</p>
+          <div className="flex items-center gap-3 mt-2 text-[10px] text-[#6B7280]">
             <span>{a.time} read</span>
             <span>{a.concepts} concepts</span>
           </div>
@@ -49,12 +49,12 @@ function MockExplorePreview() {
   return (
     <div className="space-y-3 pointer-events-none">
       {directions.map((d, i) => (
-        <div key={i} className="p-4 bg-slate-900/80 border border-slate-800 rounded-2xl">
-          <p className="text-sm font-bold text-slate-200">{d.title}</p>
-          <p className="text-xs text-slate-400 mt-1 leading-relaxed line-clamp-2">{d.desc}</p>
+        <div key={i} className="p-4 bg-white border border-[#E8E4DD] rounded-2xl">
+          <p className="text-sm font-bold text-[#2D3142]">{d.title}</p>
+          <p className="text-xs text-[#6B7280] mt-1 leading-relaxed line-clamp-2">{d.desc}</p>
           <div className="flex flex-wrap gap-1 mt-2">
             {d.concepts.map((c) => (
-              <span key={c} className="px-1.5 py-0.5 text-[10px] bg-sky-500/10 text-sky-300 border border-sky-500/20 rounded">
+              <span key={c} className="px-1.5 py-0.5 text-[10px] bg-[#6B8DB5]/10 text-[#6B8DB5] border border-[#6B8DB5]/20 rounded">
                 {c}
               </span>
             ))}
@@ -77,30 +77,30 @@ function MockAtlasPreview() {
   return (
     <div className="pointer-events-none">
       <div className="grid grid-cols-3 gap-3 mb-4">
-        <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-3 text-center">
-          <p className="text-lg font-black text-sky-400">47</p>
-          <p className="text-[10px] text-slate-500">Concepts</p>
+        <div className="bg-white border border-[#E8E4DD] rounded-xl p-3 text-center">
+          <p className="text-lg font-black text-[#D4756A]">47</p>
+          <p className="text-[10px] text-[#6B7280]">Concepts</p>
         </div>
-        <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-3 text-center">
-          <p className="text-lg font-black text-emerald-400">5</p>
-          <p className="text-[10px] text-slate-500">Domains</p>
+        <div className="bg-white border border-[#E8E4DD] rounded-xl p-3 text-center">
+          <p className="text-lg font-black text-[#7CB5A0]">5</p>
+          <p className="text-[10px] text-[#6B7280]">Domains</p>
         </div>
-        <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-3 text-center">
-          <p className="text-lg font-black text-purple-400">2.1</p>
-          <p className="text-[10px] text-slate-500">Avg Depth</p>
+        <div className="bg-white border border-[#E8E4DD] rounded-xl p-3 text-center">
+          <p className="text-lg font-black text-[#DFB44E]">2.1</p>
+          <p className="text-[10px] text-[#6B7280]">Avg Depth</p>
         </div>
       </div>
       <div className="space-y-2">
         {domains.map((d) => (
-          <div key={d.name} className="flex items-center justify-between p-2.5 bg-slate-900/80 border border-slate-800 rounded-xl">
+          <div key={d.name} className="flex items-center justify-between p-2.5 bg-white border border-[#E8E4DD] rounded-xl">
             <div>
-              <p className="text-xs font-semibold text-slate-200">{d.name}</p>
+              <p className="text-xs font-semibold text-[#2D3142]">{d.name}</p>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-20 h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div className="h-full bg-sky-400 rounded-full" style={{ width: `${d.pct}%` }} />
+              <div className="w-20 h-1.5 bg-[#E8E4DD] rounded-full overflow-hidden">
+                <div className="h-full bg-[#7CB5A0] rounded-full" style={{ width: `${d.pct}%` }} />
               </div>
-              <span className="text-[10px] text-slate-400 w-6 text-right">{d.score}</span>
+              <span className="text-[10px] text-[#6B7280] w-6 text-right">{d.score}</span>
             </div>
           </div>
         ))}
@@ -118,6 +118,7 @@ const INTRO_STEPS = [
     subtitle: "Your Feed",
     description: "ATLAS doesn\u2019t just show you articles. It watches what clicks, what\u2019s new, what you already knew. It\u2019s learning you.",
     preview: MockFeedPreview,
+    accentColor: "text-[#D4756A]",
   },
   {
     icon: "✦",
@@ -125,6 +126,7 @@ const INTRO_STEPS = [
     subtitle: "Explore",
     description: "Most tools show you more of the same. ATLAS finds the edges of your understanding and shows you exactly where to push.",
     preview: MockExplorePreview,
+    accentColor: "text-[#6B8DB5]",
   },
   {
     icon: "◎",
@@ -132,6 +134,7 @@ const INTRO_STEPS = [
     subtitle: "Your Atlas",
     description: "For the first time, see the shape of what you know. The peaks. The valleys. The territory you haven\u2019t explored yet.",
     preview: MockAtlasPreview,
+    accentColor: "text-[#7CB5A0]",
   },
 ];
 
@@ -168,7 +171,7 @@ export default function OnboardingPage() {
   const totalSteps = 5;
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-8">
+    <div className="min-h-screen bg-[#F2EFE9] flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-lg">
         {/* Step indicator */}
         <div className="flex items-center gap-1.5 justify-center mb-8">
@@ -176,7 +179,7 @@ export default function OnboardingPage() {
             <div
               key={i}
               className={`h-1 rounded-full transition-all duration-300 ${
-                i === step ? "w-8 bg-sky-400" : i < step ? "w-4 bg-sky-400/40" : "w-4 bg-slate-700"
+                i === step ? "w-8 bg-[#D4756A]" : i < step ? "w-4 bg-[#D4756A]/40" : "w-4 bg-[#E8E4DD]"
               }`}
             />
           ))}
@@ -190,11 +193,11 @@ export default function OnboardingPage() {
             <>
               <div className="text-center mb-6">
                 <span className="text-3xl">{intro.icon}</span>
-                <p className="text-xs font-semibold text-sky-400 uppercase tracking-widest mt-3">
+                <p className={`text-xs font-semibold uppercase tracking-widest mt-3 ${intro.accentColor}`}>
                   {intro.subtitle}
                 </p>
-                <h1 className="text-2xl font-black text-slate-100 mt-2">{intro.title}</h1>
-                <p className="text-slate-400 text-sm mt-2 leading-relaxed max-w-sm mx-auto">
+                <h1 className="text-2xl font-black text-[#2D3142] mt-2">{intro.title}</h1>
+                <p className="text-[#6B7280] text-sm mt-2 leading-relaxed max-w-sm mx-auto">
                   {intro.description}
                 </p>
               </div>
@@ -205,7 +208,7 @@ export default function OnboardingPage() {
 
               <button
                 onClick={() => setStep(step + 1)}
-                className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-colors"
+                className="w-full py-3 bg-[#D4756A] hover:bg-[#c4655a] text-white font-bold rounded-xl transition-colors"
               >
                 {step < 2 ? "Next" : "Build my Atlas"}
               </button>
@@ -213,7 +216,7 @@ export default function OnboardingPage() {
               {step > 0 && (
                 <button
                   onClick={() => setStep(step - 1)}
-                  className="w-full py-2 mt-2 text-slate-500 hover:text-slate-300 text-sm transition-colors"
+                  className="w-full py-2 mt-2 text-[#6B7280] hover:text-[#2D3142] text-sm transition-colors"
                 >
                   Back
                 </button>
@@ -226,8 +229,8 @@ export default function OnboardingPage() {
         {step === 3 && (
           <>
             <div className="text-center mb-8">
-              <h1 className="text-2xl font-black text-slate-100">What are you interested in?</h1>
-              <p className="text-slate-400 mt-2 text-sm">
+              <h1 className="text-2xl font-black text-[#2D3142]">What are you interested in?</h1>
+              <p className="text-[#6B7280] mt-2 text-sm">
                 Pick 3-5 topics. We&apos;ll curate your feed around these.
               </p>
             </div>
@@ -239,8 +242,8 @@ export default function OnboardingPage() {
                   onClick={() => toggle(topic)}
                   className={`px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
                     selected.includes(topic)
-                      ? "bg-sky-500/20 border-2 border-sky-400 text-sky-300"
-                      : "bg-slate-900 border-2 border-slate-700 text-slate-300 hover:border-slate-500"
+                      ? "bg-[#D4756A]/10 border-2 border-[#D4756A] text-[#D4756A]"
+                      : "bg-white border-2 border-[#E8E4DD] text-[#2D3142] hover:border-[#D4756A]/40"
                   }`}
                 >
                   {topic}
@@ -250,13 +253,13 @@ export default function OnboardingPage() {
             <button
               onClick={() => setStep(4)}
               disabled={selected.length < 3}
-              className="w-full py-3 bg-sky-500 hover:bg-sky-400 disabled:opacity-40 disabled:cursor-not-allowed text-slate-950 font-bold rounded-xl transition-colors"
+              className="w-full py-3 bg-[#D4756A] hover:bg-[#c4655a] disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold rounded-xl transition-colors"
             >
               Continue ({selected.length}/3 minimum)
             </button>
             <button
               onClick={() => setStep(2)}
-              className="w-full py-2 mt-2 text-slate-500 hover:text-slate-300 text-sm transition-colors"
+              className="w-full py-2 mt-2 text-[#6B7280] hover:text-[#2D3142] text-sm transition-colors"
             >
               Back
             </button>
@@ -267,8 +270,8 @@ export default function OnboardingPage() {
         {step === 4 && (
           <>
             <div className="text-center mb-8">
-              <h1 className="text-2xl font-black text-slate-100">How much do you read?</h1>
-              <p className="text-slate-400 mt-2 text-sm">
+              <h1 className="text-2xl font-black text-[#2D3142]">How much do you read?</h1>
+              <p className="text-[#6B7280] mt-2 text-sm">
                 This helps us calibrate how many articles to surface daily.
               </p>
             </div>
@@ -284,24 +287,24 @@ export default function OnboardingPage() {
                   onClick={() => setVolume(opt.value)}
                   className={`w-full px-5 py-4 rounded-xl text-left transition-all ${
                     volume === opt.value
-                      ? "bg-sky-500/20 border-2 border-sky-400"
-                      : "bg-slate-900 border-2 border-slate-700 hover:border-slate-500"
+                      ? "bg-[#D4756A]/10 border-2 border-[#D4756A]"
+                      : "bg-white border-2 border-[#E8E4DD] hover:border-[#D4756A]/40"
                   }`}
                 >
-                  <p className="font-semibold text-slate-100">{opt.label}</p>
-                  <p className="text-slate-400 text-sm">{opt.desc}</p>
+                  <p className="font-semibold text-[#2D3142]">{opt.label}</p>
+                  <p className="text-[#6B7280] text-sm">{opt.desc}</p>
                 </button>
               ))}
             </div>
             <button
               onClick={handleFinish}
-              className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-colors"
+              className="w-full py-3 bg-[#D4756A] hover:bg-[#c4655a] text-white font-bold rounded-xl transition-colors"
             >
               Start Reading
             </button>
             <button
               onClick={() => setStep(3)}
-              className="w-full py-2 mt-2 text-slate-500 hover:text-slate-300 text-sm transition-colors"
+              className="w-full py-2 mt-2 text-[#6B7280] hover:text-[#2D3142] text-sm transition-colors"
             >
               Back
             </button>

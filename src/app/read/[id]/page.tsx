@@ -48,7 +48,7 @@ export default async function ReadPage({ params }: { params: Promise<{ id: strin
       <main className="px-4 py-8">
         <Link
           href="/feed"
-          className="inline-block text-sm text-slate-500 hover:text-sky-400 mb-6 transition-colors"
+          className="inline-block text-sm text-[#6B7280] hover:text-[#D4756A] mb-6 transition-colors"
         >
           ← Back to Feed
         </Link>

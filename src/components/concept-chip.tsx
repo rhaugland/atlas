@@ -32,9 +32,9 @@ export function ConceptChip({ conceptId, conceptName, articleId, existingReactio
   };
 
   const reactionStyle = {
-    knew_this: "bg-emerald-500/20 border-emerald-500/40 text-emerald-300",
-    new_to_me: "bg-sky-500/20 border-sky-500/40 text-sky-300",
-    mind_blown: "bg-purple-500/20 border-purple-500/40 text-purple-300",
+    knew_this: "bg-[#7CB5A0]/20 border-[#7CB5A0]/60 text-[#7CB5A0]",
+    new_to_me: "bg-[#6B8DB5]/20 border-[#6B8DB5]/60 text-[#6B8DB5]",
+    mind_blown: "bg-[#D4756A]/20 border-[#D4756A]/60 text-[#D4756A]",
   };
 
   return (
@@ -44,7 +44,7 @@ export function ConceptChip({ conceptId, conceptName, articleId, existingReactio
         className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium border transition-all ${
           reaction
             ? reactionStyle[reaction]
-            : "bg-slate-800 border-slate-600 text-slate-300 hover:border-sky-500 hover:text-sky-300"
+            : "bg-white border-[#E8E4DD] text-[#2D3142] hover:border-[#D4756A]/50 hover:text-[#D4756A]"
         }`}
       >
         {reaction && <span>{REACTIONS.find((r) => r.value === reaction)?.emoji}</span>}
@@ -52,12 +52,12 @@ export function ConceptChip({ conceptId, conceptName, articleId, existingReactio
       </button>
 
       {showMenu && (
-        <div className="absolute z-50 bottom-full left-0 mb-2 flex gap-1 bg-slate-800 border border-slate-700 rounded-lg p-1.5 shadow-xl">
+        <div className="absolute z-50 bottom-full left-0 mb-2 flex gap-1 bg-white border border-[#E8E4DD] rounded-lg p-1.5 shadow-xl">
           {REACTIONS.map((r) => (
             <button
               key={r.value}
               onClick={() => handleReact(r.value)}
-              className="px-2 py-1 rounded text-xs font-medium text-slate-300 hover:bg-slate-700 whitespace-nowrap transition-colors"
+              className="px-2 py-1 rounded text-xs font-medium text-[#2D3142] hover:bg-[#F2EFE9] whitespace-nowrap transition-colors"
             >
               {r.emoji} {r.label}
             </button>

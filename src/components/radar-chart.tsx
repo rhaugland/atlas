@@ -21,21 +21,21 @@ export function KnowledgeRadar({ data }: { data: DomainScore[] }) {
   return (
     <ResponsiveContainer width="100%" height={400}>
       <RadarChart data={data} cx="50%" cy="50%" outerRadius="70%">
-        <PolarGrid stroke="#334155" />
+        <PolarGrid stroke="#E8E4DD" />
         <PolarAngleAxis
           dataKey="domain"
-          tick={{ fill: "#94a3b8", fontSize: 12 }}
+          tick={{ fill: "#6B7280", fontSize: 12 }}
         />
         <PolarRadiusAxis
           angle={90}
           domain={[0, 4]}
-          tick={{ fill: "#64748b", fontSize: 10 }}
+          tick={{ fill: "#6B7280", fontSize: 10 }}
         />
         <Radar
           name="Knowledge Depth"
           dataKey="score"
-          stroke="#38bdf8"
-          fill="#38bdf8"
+          stroke="#6B8DB5"
+          fill="#6B8DB5"
           fillOpacity={0.2}
           strokeWidth={2}
         />

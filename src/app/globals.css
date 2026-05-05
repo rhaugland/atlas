@@ -2,12 +2,14 @@
 
 @layer base {
   body {
-    background-color: var(--color-slate-950);
-    color: var(--color-slate-100);
+    background-color: #F2EFE9;
+    color: #2D3142;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+    text-transform: lowercase;
   }
 
   ::selection {
-    background-color: color-mix(in srgb, var(--color-sky-500) 30%, transparent);
+    background-color: color-mix(in srgb, #D4756A 30%, transparent);
   }
 }
 
