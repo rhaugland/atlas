@@ -47,18 +47,25 @@ export function ArticleReader({
         <h1 className="text-3xl font-black text-[#2D3142] leading-tight">{title}</h1>
       </header>
 
-      <div className="mb-6 bg-[#F2EFE9] border border-[#E8E4DD] rounded-xl p-4 flex flex-wrap gap-2">
-        <p className="text-xs text-[#6B7280] w-full mb-1">Concepts in this article:</p>
-        {concepts.map((c) => (
-          <ConceptChip
-            key={c.id}
-            conceptId={c.id}
-            conceptName={c.name}
-            articleId={articleId}
-            existingReaction={existingReactions[c.id] || null}
-          />
-        ))}
-      </div>
+      {concepts.length > 0 && (
+        <div className="mb-6 bg-white border-2 border-[#D4756A]/20 rounded-xl p-4">
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-xs font-semibold text-[#2D3142]">tap concepts to react</p>
+            <p className="text-[10px] text-[#6B7280]">{concepts.length} concepts</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {concepts.map((c) => (
+              <ConceptChip
+                key={c.id}
+                conceptId={c.id}
+                conceptName={c.name}
+                articleId={articleId}
+                existingReaction={existingReactions[c.id] || null}
+              />
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="prose max-w-none text-[#2D3142] leading-relaxed text-[15px]">
         {content.split("\n\n").map((paragraph, i) => (

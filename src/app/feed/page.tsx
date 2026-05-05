@@ -18,6 +18,14 @@ export default async function FeedPage() {
 
   if (!profile?.onboarded) redirect("/onboarding");
 
+  // Check if user has reacted to any concepts yet
+  const { count: reactionCount } = await supabase
+    .from("user_reactions")
+    .select("*", { count: "exact", head: true })
+    .eq("user_id", user.id);
+
+  const isNewUser = (reactionCount || 0) < 10;
+
   // Fetch articles matching user interests, ranked by quality and recency
   const { data: articles } = await supabase
     .from("articles")
@@ -37,6 +45,19 @@ export default async function FeedPage() {
             Curated for you. Tap any article to read and grow.
           </p>
         </div>
+        {isNewUser && (
+          <div className="mb-6 p-4 bg-white border border-[#E8E4DD] rounded-2xl">
+            <p className="text-sm font-semibold text-[#2D3142]">how atlas learns you</p>
+            <p className="text-xs text-[#6B7280] mt-1 leading-relaxed">
+              tap any article, then react to the concepts inside it — mark each one as
+              <span className="text-[#7CB5A0] font-medium"> ✓ knew this</span>,
+              <span className="text-[#6B8DB5] font-medium"> ✧ new to me</span>, or
+              <span className="text-[#D4756A] font-medium"> ✴ mind blown</span>.
+              this is how atlas maps what you know and unlocks your explore + atlas pages.
+            </p>
+          </div>
+        )}
+
         <div className="space-y-4">
           {(articles || []).map((article: Article) => (
             <ArticleCard key={article.id} article={article} />
