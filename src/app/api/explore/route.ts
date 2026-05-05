@@ -14,11 +14,20 @@ export async function GET() {
     .select("concept_id, familiarity_score, concepts(name, domain)")
     .eq("user_id", user.id);
 
-  if (!userConcepts || userConcepts.length < 3) {
-    return NextResponse.json({ directions: [], message: "Read more articles to unlock personalized growth directions." });
+  // Need 10+ concept reactions to unlock Explore
+  const reactedConcepts = (userConcepts || []).filter((uc: any) => uc.familiarity_score >= 2);
+  const totalConcepts = (userConcepts || []).length;
+  const EXPLORE_THRESHOLD = 10;
+
+  if (reactedConcepts.length < EXPLORE_THRESHOLD) {
+    return NextResponse.json({
+      directions: [],
+      message: `React to ${EXPLORE_THRESHOLD - reactedConcepts.length} more concepts to unlock personalized growth directions.`,
+      progress: { current: reactedConcepts.length, target: EXPLORE_THRESHOLD, totalExposed: totalConcepts },
+    });
   }
 
-  const conceptRows = userConcepts.map((uc: any) => ({
+  const conceptRows = (userConcepts || []).map((uc: any) => ({
     concept_id: uc.concept_id,
     familiarity_score: uc.familiarity_score,
     name: uc.concepts.name,

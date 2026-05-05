@@ -5,10 +5,17 @@ import { Nav } from "@/components/nav";
 import { ExploreCard } from "@/components/explore-card";
 import type { GrowthDirection } from "@/types";
 
+interface Progress {
+  current: number;
+  target: number;
+  totalExposed: number;
+}
+
 export default function ExplorePage() {
   const [directions, setDirections] = useState<GrowthDirection[]>([]);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
+  const [progress, setProgress] = useState<Progress | null>(null);
 
   useEffect(() => {
     fetch("/api/explore")
@@ -16,6 +23,7 @@ export default function ExplorePage() {
       .then((data) => {
         setDirections(data.directions || []);
         setMessage(data.message || "");
+        if (data.progress) setProgress(data.progress);
       })
       .catch(() => setMessage("Failed to load directions."))
       .finally(() => setLoading(false));
@@ -45,12 +53,31 @@ export default function ExplorePage() {
             ))}
           </div>
         ) : (
-          <div className="text-center py-20">
+          <div className="text-center py-12">
             <p className="text-3xl mb-4">✦</p>
             <p className="text-slate-300 font-semibold">{message || "Read a few more articles to unlock your growth map."}</p>
             <p className="text-slate-500 text-sm mt-2">
               ATLAS needs to understand what you know before it can guide where to grow.
             </p>
+            {progress && (
+              <div className="mt-8 max-w-xs mx-auto">
+                <div className="flex justify-between text-xs text-slate-500 mb-2">
+                  <span>Concept reactions</span>
+                  <span>{progress.current} / {progress.target}</span>
+                </div>
+                <div className="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-sky-500 rounded-full transition-all duration-500"
+                    style={{ width: `${Math.min((progress.current / progress.target) * 100, 100)}%` }}
+                  />
+                </div>
+                {progress.totalExposed > 0 && (
+                  <p className="text-xs text-slate-600 mt-2">
+                    {progress.totalExposed} concepts encountered so far
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         )}
       </main>

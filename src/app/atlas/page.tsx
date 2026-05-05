@@ -51,7 +51,7 @@ export default async function AtlasPage() {
           </p>
         </div>
 
-        {radarData.length > 2 ? (
+        {radarData.length >= 3 ? (
           <>
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-6">
               <KnowledgeRadar data={radarData} />
@@ -93,12 +93,29 @@ export default async function AtlasPage() {
             </div>
           </>
         ) : (
-          <div className="text-center py-20">
+          <div className="text-center py-12">
             <p className="text-3xl mb-4">◎</p>
             <p className="text-slate-300 font-semibold">Your atlas is forming</p>
             <p className="text-slate-500 text-sm mt-2">
-              Read and react to more articles to map your knowledge landscape.
+              React to concepts across 3+ domains to reveal your knowledge map.
             </p>
+            <div className="mt-8 max-w-xs mx-auto">
+              <div className="flex justify-between text-xs text-slate-500 mb-2">
+                <span>Domains discovered</span>
+                <span>{radarData.length} / 3</span>
+              </div>
+              <div className="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-sky-500 rounded-full transition-all duration-500"
+                  style={{ width: `${Math.min((radarData.length / 3) * 100, 100)}%` }}
+                />
+              </div>
+              {totalConcepts > 0 && (
+                <p className="text-xs text-slate-600 mt-2">
+                  {totalConcepts} concepts mapped across {radarData.length} domain{radarData.length !== 1 ? "s" : ""}
+                </p>
+              )}
+            </div>
           </div>
         )}
       </main>
