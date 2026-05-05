@@ -114,23 +114,23 @@ function MockAtlasPreview() {
 const INTRO_STEPS = [
   {
     icon: "◉",
-    title: "Read smarter, not more",
+    title: "Every article you read becomes part of you",
     subtitle: "Your Feed",
-    description: "Curated articles from top sources, ranked by what matters to you. Every article is analyzed for key concepts — ideas, not keywords.",
+    description: "ATLAS doesn\u2019t just show you articles. It watches what clicks, what\u2019s new, what you already knew. It\u2019s learning you.",
     preview: MockFeedPreview,
   },
   {
     icon: "✦",
-    title: "Grow in the right direction",
+    title: "It knows what you don\u2019t know yet",
     subtitle: "Explore",
-    description: "ATLAS maps what you know and finds the gaps worth filling. It builds personalized growth paths connecting your strengths to your blind spots.",
+    description: "Most tools show you more of the same. ATLAS finds the edges of your understanding and shows you exactly where to push.",
     preview: MockExplorePreview,
   },
   {
     icon: "◎",
-    title: "See your knowledge take shape",
+    title: "A map of everything you\u2019ve ever understood",
     subtitle: "Your Atlas",
-    description: "A living map of your expertise. Watch your depth grow across domains as you read. The dark zones show where to explore next.",
+    description: "For the first time, see the shape of what you know. The peaks. The valleys. The territory you haven\u2019t explored yet.",
     preview: MockAtlasPreview,
   },
 ];
@@ -207,7 +207,7 @@ export default function OnboardingPage() {
                 onClick={() => setStep(step + 1)}
                 className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-colors"
               >
-                {step < 2 ? "Next" : "Let\u2019s set up your feed"}
+                {step < 2 ? "Next" : "Build my Atlas"}
               </button>
 
               {step > 0 && (

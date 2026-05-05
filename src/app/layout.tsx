@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ATLAS — Know More, Know Deeper",
-  description: "A knowledge-aware reader that learns what you know and guides your growth.",
+  title: "ATLAS — The first reader that remembers what you know",
+  description: "Every article becomes part of your knowledge map. ATLAS learns what you know, finds what you're missing, and shows you where to grow.",
   openGraph: {
     title: "ATLAS",
-    description: "Know more. Know deeper. Know what you're missing.",
+    description: "The first reader that remembers what you know.",
   },
 };
 

@@ -33,7 +33,7 @@ export default function LoginPage() {
             AT<span className="text-sky-400">LAS</span>
           </h1>
           <p className="text-slate-400 mt-2 text-sm">
-            Know more. Know deeper. Know what you&apos;re missing.
+            The first reader that remembers what you know.
           </p>
         </div>
 
