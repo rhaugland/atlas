@@ -34,7 +34,7 @@ export default function ExplorePage() {
       <Nav />
       <main className="max-w-2xl mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-2xl font-black text-[#2D3142]">Explore</h1>
+          <h1 className="text-2xl font-black text-[#1A1A1A]">Explore</h1>
           <p className="text-[#6B7280] text-sm mt-1">
             How do you want to expand your knowledge today?
           </p>
@@ -55,7 +55,7 @@ export default function ExplorePage() {
         ) : (
           <div className="text-center py-12">
             <p className="text-3xl mb-4 text-[#6B8DB5]">✦</p>
-            <p className="text-[#2D3142] font-semibold">{message || "Read a few more articles to unlock your growth map."}</p>
+            <p className="text-[#1A1A1A] font-semibold">{message || "Read a few more articles to unlock your growth map."}</p>
             <p className="text-[#6B7280] text-sm mt-2">
               margin needs to understand what you know before it can guide where to grow.
             </p>

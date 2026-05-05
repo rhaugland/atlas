@@ -21,7 +21,7 @@ function MockFeedPreview() {
           <p className="text-[10px] font-semibold text-[#D4756A] uppercase tracking-wider mb-1">
             {a.source} <span className="text-[#6B7280] ml-1">{a.domain}</span>
           </p>
-          <p className="text-sm font-bold text-[#2D3142] leading-snug">{a.title}</p>
+          <p className="text-sm font-bold text-[#1A1A1A] leading-snug">{a.title}</p>
           <div className="flex items-center gap-3 mt-2 text-[10px] text-[#6B7280]">
             <span>{a.time} read</span>
             <span>{a.concepts} concepts</span>
@@ -50,7 +50,7 @@ function MockExplorePreview() {
     <div className="space-y-3 pointer-events-none">
       {directions.map((d, i) => (
         <div key={i} className="p-4 bg-white border border-[#E8E4DD] rounded-2xl">
-          <p className="text-sm font-bold text-[#2D3142]">{d.title}</p>
+          <p className="text-sm font-bold text-[#1A1A1A]">{d.title}</p>
           <p className="text-xs text-[#6B7280] mt-1 leading-relaxed line-clamp-2">{d.desc}</p>
           <div className="flex flex-wrap gap-1 mt-2">
             {d.concepts.map((c) => (
@@ -94,7 +94,7 @@ function MockAtlasPreview() {
         {domains.map((d) => (
           <div key={d.name} className="flex items-center justify-between p-2.5 bg-white border border-[#E8E4DD] rounded-xl">
             <div>
-              <p className="text-xs font-semibold text-[#2D3142]">{d.name}</p>
+              <p className="text-xs font-semibold text-[#1A1A1A]">{d.name}</p>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-20 h-1.5 bg-[#E8E4DD] rounded-full overflow-hidden">
@@ -196,7 +196,7 @@ export default function OnboardingPage() {
                 <p className={`text-xs font-semibold uppercase tracking-widest mt-3 ${intro.accentColor}`}>
                   {intro.subtitle}
                 </p>
-                <h1 className="text-2xl font-black text-[#2D3142] mt-2">{intro.title}</h1>
+                <h1 className="text-2xl font-black text-[#1A1A1A] mt-2">{intro.title}</h1>
                 <p className="text-[#6B7280] text-sm mt-2 leading-relaxed max-w-sm mx-auto">
                   {intro.description}
                 </p>
@@ -216,7 +216,7 @@ export default function OnboardingPage() {
               {step > 0 && (
                 <button
                   onClick={() => setStep(step - 1)}
-                  className="w-full py-2 mt-2 text-[#6B7280] hover:text-[#2D3142] text-sm transition-colors"
+                  className="w-full py-2 mt-2 text-[#6B7280] hover:text-[#1A1A1A] text-sm transition-colors"
                 >
                   Back
                 </button>
@@ -229,7 +229,7 @@ export default function OnboardingPage() {
         {step === 3 && (
           <>
             <div className="text-center mb-8">
-              <h1 className="text-2xl font-black text-[#2D3142]">What are you interested in?</h1>
+              <h1 className="text-2xl font-black text-[#1A1A1A]">What are you interested in?</h1>
               <p className="text-[#6B7280] mt-2 text-sm">
                 Pick 3-5 topics. We&apos;ll curate your feed around these.
               </p>
@@ -243,7 +243,7 @@ export default function OnboardingPage() {
                   className={`px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
                     selected.includes(topic)
                       ? "bg-[#D4756A]/10 border-2 border-[#D4756A] text-[#D4756A]"
-                      : "bg-white border-2 border-[#E8E4DD] text-[#2D3142] hover:border-[#D4756A]/40"
+                      : "bg-white border-2 border-[#E8E4DD] text-[#1A1A1A] hover:border-[#D4756A]/40"
                   }`}
                 >
                   {topic}
@@ -259,7 +259,7 @@ export default function OnboardingPage() {
             </button>
             <button
               onClick={() => setStep(2)}
-              className="w-full py-2 mt-2 text-[#6B7280] hover:text-[#2D3142] text-sm transition-colors"
+              className="w-full py-2 mt-2 text-[#6B7280] hover:text-[#1A1A1A] text-sm transition-colors"
             >
               Back
             </button>
@@ -270,7 +270,7 @@ export default function OnboardingPage() {
         {step === 4 && (
           <>
             <div className="text-center mb-8">
-              <h1 className="text-2xl font-black text-[#2D3142]">How much do you read?</h1>
+              <h1 className="text-2xl font-black text-[#1A1A1A]">How much do you read?</h1>
               <p className="text-[#6B7280] mt-2 text-sm">
                 This helps us calibrate how many articles to surface daily.
               </p>
@@ -291,7 +291,7 @@ export default function OnboardingPage() {
                       : "bg-white border-2 border-[#E8E4DD] hover:border-[#D4756A]/40"
                   }`}
                 >
-                  <p className="font-semibold text-[#2D3142]">{opt.label}</p>
+                  <p className="font-semibold text-[#1A1A1A]">{opt.label}</p>
                   <p className="text-[#6B7280] text-sm">{opt.desc}</p>
                 </button>
               ))}
@@ -304,7 +304,7 @@ export default function OnboardingPage() {
             </button>
             <button
               onClick={() => setStep(3)}
-              className="w-full py-2 mt-2 text-[#6B7280] hover:text-[#2D3142] text-sm transition-colors"
+              className="w-full py-2 mt-2 text-[#6B7280] hover:text-[#1A1A1A] text-sm transition-colors"
             >
               Back
             </button>

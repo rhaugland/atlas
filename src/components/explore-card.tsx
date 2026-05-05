@@ -14,7 +14,7 @@ const CHIP_COLORS = [
 export function ExploreCard({ direction }: { direction: GrowthDirection }) {
   return (
     <div className="p-6 bg-white border border-[#E8E4DD] rounded-2xl hover:border-[#6B8DB5]/40 hover:shadow-[4px_0_0_0_#6B8DB5] transition-all group">
-      <h3 className="text-lg font-bold text-[#2D3142] group-hover:text-[#6B8DB5] transition-colors">
+      <h3 className="text-lg font-bold text-[#1A1A1A] group-hover:text-[#6B8DB5] transition-colors">
         {direction.title}
       </h3>
       <p className="text-sm text-[#6B7280] mt-2 leading-relaxed">

@@ -44,7 +44,7 @@ export function ConceptChip({ conceptId, conceptName, articleId, existingReactio
         className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium border transition-all ${
           reaction
             ? reactionStyle[reaction]
-            : "bg-white border-[#E8E4DD] text-[#2D3142] hover:border-[#D4756A]/50 hover:text-[#D4756A]"
+            : "bg-white border-[#E8E4DD] text-[#1A1A1A] hover:border-[#D4756A]/50 hover:text-[#D4756A]"
         }`}
       >
         {reaction && <span>{REACTIONS.find((r) => r.value === reaction)?.emoji}</span>}
@@ -57,7 +57,7 @@ export function ConceptChip({ conceptId, conceptName, articleId, existingReactio
             <button
               key={r.value}
               onClick={() => handleReact(r.value)}
-              className="px-2 py-1 rounded text-xs font-medium text-[#2D3142] hover:bg-[#FAF8F3] whitespace-nowrap transition-colors"
+              className="px-2 py-1 rounded text-xs font-medium text-[#1A1A1A] hover:bg-[#FAF8F3] whitespace-nowrap transition-colors"
             >
               {r.emoji} {r.label}
             </button>

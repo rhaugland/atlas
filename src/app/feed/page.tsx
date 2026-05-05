@@ -40,14 +40,14 @@ export default async function FeedPage() {
       <Nav />
       <main className="max-w-2xl mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-2xl font-black text-[#2D3142]">Your Feed</h1>
+          <h1 className="text-2xl font-black text-[#1A1A1A]">Your Feed</h1>
           <p className="text-[#6B7280] text-sm mt-1">
             Curated for you. Tap any article to read and grow.
           </p>
         </div>
         {isNewUser && (
           <div className="mb-6 p-4 bg-white border border-[#E8E4DD] rounded-2xl">
-            <p className="text-sm font-semibold text-[#2D3142]">how margin learns you</p>
+            <p className="text-sm font-semibold text-[#1A1A1A]">how margin learns you</p>
             <p className="text-xs text-[#6B7280] mt-1 leading-relaxed">
               tap any article, then react to the concepts inside it — mark each one as
               <span className="text-[#7CB5A0] font-medium"> ✓ knew this</span>,

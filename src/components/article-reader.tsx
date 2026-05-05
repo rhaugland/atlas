@@ -44,13 +44,13 @@ export function ArticleReader({
         <p className="text-xs font-semibold text-[#6B8DB5] uppercase tracking-wider mb-2">
           {source} {readingTime && `· ${readingTime} min read`}
         </p>
-        <h1 className="text-3xl font-black text-[#2D3142] leading-tight">{title}</h1>
+        <h1 className="text-3xl font-black text-[#1A1A1A] leading-tight">{title}</h1>
       </header>
 
       {concepts.length > 0 && (
         <div className="mb-6 bg-white border-2 border-[#D4756A]/20 rounded-xl p-4">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-xs font-semibold text-[#2D3142]">tap concepts to react</p>
+            <p className="text-xs font-semibold text-[#1A1A1A]">tap concepts to react</p>
             <p className="text-[10px] text-[#6B7280]">{concepts.length} concepts</p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -67,7 +67,7 @@ export function ArticleReader({
         </div>
       )}
 
-      <div className="prose max-w-none text-[#2D3142] leading-relaxed text-[15px]">
+      <div className="prose max-w-none text-[#1A1A1A] leading-relaxed text-[15px]">
         {content.split("\n\n").map((paragraph, i) => (
           <p key={i} className="mb-4">{paragraph}</p>
         ))}

@@ -26,7 +26,7 @@ export function ArticleCard({ article }: { article: Article }) {
               <span className="text-[#6B7280] ml-2">{article.domain}</span>
             )}
           </p>
-          <h3 className="text-base font-bold text-[#2D3142] group-hover:text-[#D4756A] transition-colors line-clamp-2">
+          <h3 className="text-base font-bold text-[#1A1A1A] group-hover:text-[#D4756A] transition-colors line-clamp-2">
             {article.title}
           </h3>
           {article.summary && (

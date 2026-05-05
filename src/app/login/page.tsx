@@ -29,7 +29,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-[#FAF8F3] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-black tracking-tight text-[#2D3142]">
+          <h1 className="text-4xl font-black tracking-tight text-[#1A1A1A]">
             mar<span className="text-[#D4756A]">gin</span>
           </h1>
           <p className="text-[#6B7280] mt-2 text-sm">
@@ -41,7 +41,7 @@ export default function LoginPage() {
           <div className="bg-[#7CB5A0]/10 border border-[#7CB5A0]/40 rounded-2xl p-8 text-center">
             <p className="text-[#7CB5A0] font-semibold">Check your email</p>
             <p className="text-[#6B7280] text-sm mt-2">
-              We sent a magic link to <span className="text-[#2D3142]">{email}</span>
+              We sent a magic link to <span className="text-[#1A1A1A]">{email}</span>
             </p>
           </div>
         ) : (
@@ -52,7 +52,7 @@ export default function LoginPage() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@company.com"
               required
-              className="w-full px-4 py-3 bg-white border border-[#E8E4DD] rounded-xl text-[#2D3142] placeholder:text-[#6B7280] focus:outline-none focus:border-[#D4756A]"
+              className="w-full px-4 py-3 bg-white border border-[#E8E4DD] rounded-xl text-[#1A1A1A] placeholder:text-[#6B7280] focus:outline-none focus:border-[#D4756A]"
             />
             <button
               type="submit"
