@@ -54,7 +54,9 @@ Return ONLY valid JSON, no markdown.`,
   const text_content = response.content[0];
   if (text_content.type !== "text") throw new Error("No text response");
 
-  return JSON.parse(text_content.text);
+  // Strip markdown code fences if present
+  const raw = text_content.text.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/i, "").trim();
+  return JSON.parse(raw);
 }
 
 export async function generateExploreCommentary(
