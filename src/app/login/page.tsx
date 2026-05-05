@@ -26,11 +26,11 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F2EFE9] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#FAF8F3] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-10">
           <h1 className="text-4xl font-black tracking-tight text-[#2D3142]">
-            AT<span className="text-[#D4756A]">LAS</span>
+            mar<span className="text-[#D4756A]">gin</span>
           </h1>
           <p className="text-[#6B7280] mt-2 text-sm">
             your mind, picked up where you left off.

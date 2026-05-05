@@ -4,7 +4,7 @@ import { JSDOM } from "jsdom";
 export async function extractArticleText(url: string): Promise<string | null> {
   try {
     const response = await fetch(url, {
-      headers: { "User-Agent": "ATLAS-Reader/1.0" },
+      headers: { "User-Agent": "Margin-Reader/1.0" },
       signal: AbortSignal.timeout(15000),
     });
     const html = await response.text();

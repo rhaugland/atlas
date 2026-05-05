@@ -57,7 +57,7 @@ export default function ExplorePage() {
             <p className="text-3xl mb-4 text-[#6B8DB5]">✦</p>
             <p className="text-[#2D3142] font-semibold">{message || "Read a few more articles to unlock your growth map."}</p>
             <p className="text-[#6B7280] text-sm mt-2">
-              ATLAS needs to understand what you know before it can guide where to grow.
+              margin needs to understand what you know before it can guide where to grow.
             </p>
             {progress && (
               <div className="mt-8 max-w-xs mx-auto">

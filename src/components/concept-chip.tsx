@@ -57,7 +57,7 @@ export function ConceptChip({ conceptId, conceptName, articleId, existingReactio
             <button
               key={r.value}
               onClick={() => handleReact(r.value)}
-              className="px-2 py-1 rounded text-xs font-medium text-[#2D3142] hover:bg-[#F2EFE9] whitespace-nowrap transition-colors"
+              className="px-2 py-1 rounded text-xs font-medium text-[#2D3142] hover:bg-[#FAF8F3] whitespace-nowrap transition-colors"
             >
               {r.emoji} {r.label}
             </button>

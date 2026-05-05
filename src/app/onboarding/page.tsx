@@ -116,7 +116,7 @@ const INTRO_STEPS = [
     icon: "◉",
     title: "Every article you read becomes part of you",
     subtitle: "Your Feed",
-    description: "ATLAS doesn\u2019t just show you articles. It watches what clicks, what\u2019s new, what you already knew. It\u2019s learning you.",
+    description: "margin doesn\u2019t just show you articles. It watches what clicks, what\u2019s new, what you already knew. It\u2019s learning you.",
     preview: MockFeedPreview,
     accentColor: "text-[#D4756A]",
   },
@@ -124,14 +124,14 @@ const INTRO_STEPS = [
     icon: "✦",
     title: "It knows what you don\u2019t know yet",
     subtitle: "Explore",
-    description: "Most tools show you more of the same. ATLAS finds the edges of your understanding and shows you exactly where to push.",
+    description: "Most tools show you more of the same. margin finds the edges of your understanding and shows you exactly where to push.",
     preview: MockExplorePreview,
     accentColor: "text-[#6B8DB5]",
   },
   {
     icon: "◎",
     title: "A map of everything you\u2019ve ever understood",
-    subtitle: "Your Atlas",
+    subtitle: "Your Map",
     description: "For the first time, see the shape of what you know. The peaks. The valleys. The territory you haven\u2019t explored yet.",
     preview: MockAtlasPreview,
     accentColor: "text-[#7CB5A0]",
@@ -171,7 +171,7 @@ export default function OnboardingPage() {
   const totalSteps = 5;
 
   return (
-    <div className="min-h-screen bg-[#F2EFE9] flex items-center justify-center px-4 py-8">
+    <div className="min-h-screen bg-[#FAF8F3] flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-lg">
         {/* Step indicator */}
         <div className="flex items-center gap-1.5 justify-center mb-8">
@@ -210,7 +210,7 @@ export default function OnboardingPage() {
                 onClick={() => setStep(step + 1)}
                 className="w-full py-3 bg-[#D4756A] hover:bg-[#c4655a] text-white font-bold rounded-xl transition-colors"
               >
-                {step < 2 ? "Next" : "Build my Atlas"}
+                {step < 2 ? "Next" : "Build my map"}
               </button>
 
               {step > 0 && (

@@ -45,7 +45,7 @@ export default async function AtlasPage() {
       <Nav />
       <main className="max-w-2xl mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-2xl font-black text-[#2D3142]">Your Atlas</h1>
+          <h1 className="text-2xl font-black text-[#2D3142]">Your Map</h1>
           <p className="text-[#6B7280] text-sm mt-1">
             A map of what you know. Dark zones are where you can grow.
           </p>
@@ -95,7 +95,7 @@ export default async function AtlasPage() {
         ) : (
           <div className="text-center py-12">
             <p className="text-3xl mb-4 text-[#7CB5A0]">◎</p>
-            <p className="text-[#2D3142] font-semibold">Your atlas is forming</p>
+            <p className="text-[#2D3142] font-semibold">Your map is forming</p>
             <p className="text-[#6B7280] text-sm mt-2">
               React to concepts across 3+ domains to reveal your knowledge map.
             </p>
